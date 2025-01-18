@@ -26,6 +26,21 @@
         transform: translateY(-10px);
       }
     }
+    .readButton {
+      background-color: pink; 
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      align-items: center;
+      align-self: center;
+      justify-content: center;
+    }
   </style>
 </head>
 <body class="gradient-background">
@@ -44,6 +59,7 @@
         </button>
       </div>
     </div>
+    <button id="read more" class="readButton" style="display: none;"> <a href="/love-letter/index.html">READ MORE ABOUT HOW AMAZING YOU AREEEE!!!!♥️♥️♥️♥️♥️♥️😍😍😍😍😍😍</a> </button>
   </div>
 
   <script type="module">
@@ -79,7 +95,7 @@
         yesButton.style.width = `${buttonWidth}px`;
         yesButton.style.fontSize = `${fontSize}px`; // Update font size
         if (noClickCount < 6) {
-          noButton.textContent = ["No", "Are you sure?", "Pookie please", "Don't do this to me :(", "You're breaking my heart", "I'm gonna cry..."][noClickCount];
+          noButton.textContent = ["No", "Are you sure?", "Are you super duper sure", "This is so unfair", "WHAT DID I DOOOOO😭😭😭😭😭😭", "I'm gonna cry..."][noClickCount];
         }
       }
     });
@@ -88,8 +104,13 @@
       imageDisplay.src = './images/image7.gif'; // Change to image7.gif
       valentineQuestion.textContent = "Yayyy!! :3"; // Change the question text
       responseButtons.style.display = 'none'; // Hide both buttons
-      confetti(); // Trigger confetti animation
+      confetti();
+      let button = document.getElementById('read more');
+      button.style.display = 'block';
+       // Trigger confetti animation
     });
+
+
   </script>  
 </body>
 </html>
