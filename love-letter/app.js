@@ -62,7 +62,7 @@ let trackList = [
     {
         name: "My kind of woman",
         artist: "Mac Demarco",
-        path: "./music/my-kind-of-woman.mp3",
+        path: "./music/mkow.mp3",
     },
     {
         name: "pretty boy",
