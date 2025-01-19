@@ -34,7 +34,7 @@
     <div class="fixed bottom-6 z-10">
         <div class="music-container relative bg-neutral-100 py-3 px-3 border-2 z-10 rounded-md border-black flex items-center" style="
         padding: 0;
-        width: 400px;
+        width: 420px;
         ">
             <div class="toggle-player bg-neutral-100 border-2 border-black">
                 <img class="w-full" src="icons/close.svg" alt="">
@@ -46,7 +46,7 @@
                 <div class="sound-bars-lottie">
                     <div class="sound-bars"></div>
                 </div>
-                <div class="track-info -space-y-1">
+                <div class="track-info -space-y-1" style="padding-right: 35px; padding-top: 20px;padding-bottom: 20px;">
                     <div class="trackname"></div>
                     <div class="trackartist">Track Artist</div>
                 </div>
@@ -66,34 +66,34 @@
     </div>
 
     <!-- BACKGROUND -->
-    <div class="background">
-        <div class="one">
-            <img src="img/back.jpg" alt="">
-            <div class="container">
-                <div class="envelope-wrapper">
-                    <div class="envelope">
-                        <div class="letter">
-                            <div class="text">
-                                <strong style="font-size: .89rem;">Dear My wife,</strong>
-                                <p style="text-indent: 15px;">
-                                    Happy Valentine's Day my Love, Thank you for being the most incredible partner anyone could ever ask for. Your kindness, your strength, and your unwavering support mean everything to me. I love you more than words can express, today, every day and forever.
-                                </p>
-                                <p class="love">I LOVE YOU SO MUCH</p>
-                                <div class="pana">
-                                    <img src="icons/heartarrow.svg" alt="">
+    <section>
+        <div class="background">
+            <div class="one">
+                <div class="container">
+                    <div class="envelope-wrapper">
+                        <div class="envelope">
+                            <div class="letter">
+                                <div class="text">
+                                    <strong style="font-size: .89rem;">Dear My wife,</strong>
+                                    <p style="text-indent: 15px;">
+                                       [place paragrapoh here]
+                                    </p>
+                                    <p class="love">I LOVE YOU SO MUCH</p>
+                                    <div class="pana">
+                                        <img src="icons/heartarrow.svg" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="heart"></div>
                     </div>
-                    <div class="heart"></div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- FIRST CARD -->
     <div class="w-full h-full-vh z-0 relative">
-        <!-- BACKGROUND -->
-        <img class="w-full h-full object-cover" src=" alt="">
+        
         <!-- FIRST PAGE -->
         <div class="absolute top-0 h-full flex items-center justify-center flex-col w-full">
             <!-- FIRST CARD -->
@@ -137,7 +137,6 @@
     <!-- FOURTH -->
     <div class="w-full h-[100vh] z-0 relative">
         <!-- BACKGROUND -->
-        <img class="w-full h-full object-cover" src="img/back.jpg" alt="">
         <div class="absolute top-0 w-full h-full flex justify-center items-center">
             <!-- COUNTER -->
             <div class="flex bg-neutral-100 gap-5 relative border-2 z-10 border-black flex-col px-5 pb-3 shadow-md pt-9 rounded-md" style="
@@ -183,9 +182,30 @@
     </div>
     <script>
         const envelope = document.querySelector('.envelope-wrapper');
+        const letter = document.querySelector('.letter');
+        
         envelope.addEventListener('click', () => {
             envelope.classList.toggle('flap');
-            envelope.classList.toggle('open');
+            
+            // Add a slight delay before adding the 'open' class
+            setTimeout(() => {
+                envelope.classList.toggle('open');
+            }, 300);
+            
+            // Prevent scroll jumping
+            if (envelope.classList.contains('open')) {
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => {
+                    document.body.style.overflow = '';
+                }, 800);
+            }
+        });
+
+        // Optional: Add smooth scroll into view when envelope is opened
+        letter.addEventListener('transitionend', () => {
+            if (envelope.classList.contains('open')) {
+                letter.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         });
     </script>
     
