@@ -45,7 +45,6 @@
 .container {
   height: 100%;
   width: 100%;
-  top: 1.5rem;
   display: grid;
   position: absolute;
   place-items: center;
